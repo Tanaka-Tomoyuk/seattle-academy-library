@@ -50,6 +50,15 @@ public class UsersService {
 		} catch (Exception e) {
 			return null;
 		}
+		
+	}
+	
+	public void resetPassword(UserInfo userInfo) {
+
+		// SQL生成
+		String sql = "UPDATE  users set password = ? .";
+		jdbcTemplate.update(sql);
+		
 	}
 
 }
